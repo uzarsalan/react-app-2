@@ -1,11 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import Image from "./components/Image";
 
 function App() {
+  let imgUrl =
+    "https://fastly.picsum.photos/id/586/200/300.jpg?hmac=Ugf94OPRVzdbHxLu5sunf4PTa53u3gDVzdsh5jFCwQE";
+
+  let [a, setA] = useState(0);
+
+  let items = [
+    { imgSrc: logo, text: "new text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+    { imgSrc: imgUrl, text: "Second text" },
+  ];
+
+  setInterval(() => {
+    setA(++a);
+  }, 1000);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {items.map((item) => (
+          <Image imgSrc={item.imgSrc} text={item.text} />
+        ))}
+
+        {a}
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
