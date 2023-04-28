@@ -17,13 +17,13 @@ function App() {
     setThemeDark(value);
   };
 
-  const [themeDark, setThemeDark] = useState(true);
+  const [themeDark, setThemeDark] = useState(false);
 
   return (
-    <div className="App p-2">
+    <div className={"p-2 " + (themeDark ? "dark bg-slate-950 text-white" : "")}>
       <DarkThemeSwitcher darkTheme={themeDark} setDarkTheme={setDarkTheme} />
       <CartWidget cart={cart} />
-      <Menu themeDark={themeDark} onItemBuy={(item) => addToCart(item)}></Menu>
+      <Menu onItemBuy={(item) => addToCart(item)}></Menu>
     </div>
   );
 }

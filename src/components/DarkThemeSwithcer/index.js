@@ -1,14 +1,14 @@
+import DarkThemeIcon from "../svg/DarkThemeIcon";
+import style from "./DarkThemeSwitcher.module.css";
+
 const DarkThemeSwitcher = ({ darkTheme, setDarkTheme }) => {
   return (
-    <div>
-      <label for="themeswitcher">Темная тема</label>
-      <input
-        id="themeswitcher"
-        type="checkbox"
-        checked={darkTheme}
-        onChange={() => setDarkTheme(!darkTheme)}
-      />
-    </div>
+    <button
+      className={`mx-auto block ${style.initial} ${darkTheme && style.rotate}`}
+      onClick={() => setDarkTheme(!darkTheme)}
+    >
+      <DarkThemeIcon darkTheme={darkTheme} />
+    </button>
   );
 };
 

@@ -1,6 +1,6 @@
 import MenuCard from "./MenuCard";
 
-const Menu = ({ onItemBuy, themeDark }) => {
+const Menu = ({ onItemBuy }) => {
   let menu = [
     {
       name: "Куриная",
@@ -36,8 +36,7 @@ const Menu = ({ onItemBuy, themeDark }) => {
   return (
     <div
       className={
-        "mx-auto grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 container " +
-        (themeDark ? "bg-slate-950" : "")
+        "mx-auto grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 container"
       }
     >
       {menu.map((item) => (

@@ -6,7 +6,11 @@ const MenuCard = ({ item, onClickBuy = () => {} }) => {
   );
 
   return (
-    <div className={"rounded overflow-hidden shadow-lg " + style.card}>
+    <div
+      className={
+        "rounded overflow-hidden shadow-lg dark:bg-slate-900 " + style.card
+      }
+    >
       <img src={item.image} className="w-full" />
       <div className="p-2">
         <div className={"text-2xl font-bold " + style.title}>{item.name}</div>
