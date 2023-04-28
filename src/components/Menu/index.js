@@ -30,7 +30,7 @@ const Menu = ({ onItemBuy }) => {
       name: "Детская",
       price: 500,
       ingredients: ["Грибы", "Картофель фри", "Сыр", "Томатный соус"],
-      image: "/assets/pizza.jpeg",
+      image: "assets/pizza.jpeg",
     },
   ];
   return (
