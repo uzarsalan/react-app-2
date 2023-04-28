@@ -20,10 +20,16 @@ function App() {
   const [themeDark, setThemeDark] = useState(false);
 
   return (
-    <div className={"p-2 " + (themeDark ? "dark bg-slate-950 text-white" : "")}>
-      <DarkThemeSwitcher darkTheme={themeDark} setDarkTheme={setDarkTheme} />
-      <CartWidget cart={cart} />
-      <Menu onItemBuy={(item) => addToCart(item)}></Menu>
+    <div
+      className={
+        "p-2 min-h-screen " + (themeDark ? "dark bg-slate-950 text-white" : "")
+      }
+    >
+      <div className="container mx-auto">
+        <DarkThemeSwitcher darkTheme={themeDark} setDarkTheme={setDarkTheme} />
+        <CartWidget cart={cart} />
+        <Menu onItemBuy={(item) => addToCart(item)}></Menu>
+      </div>
     </div>
   );
 }
