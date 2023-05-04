@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./MenuCard.module.css";
 
 const MenuCard = ({ item, onClickBuy = () => {} }) => {
@@ -13,7 +14,9 @@ const MenuCard = ({ item, onClickBuy = () => {} }) => {
     >
       <img src={item.image} className="w-full" />
       <div className="p-2">
-        <div className={"text-2xl font-bold " + style.title}>{item.name}</div>
+        <Link to={`/catalog/${item.id}`}>
+          <div className={"text-2xl font-bold " + style.title}>{item.name}</div>
+        </Link>
         <div className="py-2">{ingredients}</div>
         <button
           onClick={() => onClickBuy(item)}

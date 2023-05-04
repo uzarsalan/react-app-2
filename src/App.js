@@ -2,9 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import Image from "./components/Image";
-import Menu from "./components/Menu";
+import Menu from "./pages/MenuPage";
 import CartWidget from "./components/CartWidget";
 import DarkThemeSwitcher from "./components/DarkThemeSwithcer";
+import { Outlet } from "react-router-dom";
+import MainMenu from "./components/MainMenu";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -27,8 +29,9 @@ function App() {
     >
       <div className="container mx-auto">
         <DarkThemeSwitcher darkTheme={themeDark} setDarkTheme={setDarkTheme} />
+        <MainMenu />
         <CartWidget cart={cart} />
-        <Menu onItemBuy={(item) => addToCart(item)}></Menu>
+        <Outlet></Outlet>
       </div>
     </div>
   );

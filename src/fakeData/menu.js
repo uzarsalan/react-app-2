@@ -1,0 +1,39 @@
+let menu = [
+  {
+    id: 1,
+    name: "Куриная",
+    price: 500,
+    ingredients: ["Грибы", "Курица", "Сыр", "Томатный соус"],
+    image: "/assets/pizza.jpeg",
+  },
+  {
+    id: 2,
+    name: "Колбасная",
+    price: 500,
+    ingredients: ["Грибы", "Колбаса", "Сыр", "Томатный соус"],
+    image: "/assets/pizza.jpeg",
+  },
+  {
+    id: 3,
+    name: "Ананасная",
+    price: 500,
+    ingredients: ["Грибы", "Ананас", "Сыр", "Томатный соус"],
+    image: "/assets/pizza.jpeg",
+  },
+  {
+    id: 4,
+    name: "Охотничья",
+    price: 500,
+    ingredients: ["Грибы", "Колбаски", "Сыр", "Томатный соус"],
+    image: "/assets/pizza.jpeg",
+  },
+  {
+    id: 5,
+    name: "Детская",
+    price: 500,
+    ingredients: ["Грибы", "Картофель фри", "Сыр", "Томатный соус"],
+    image: "/assets/pizza.jpeg",
+  },
+];
+
+export default menu;
