@@ -7,19 +7,14 @@ import CartWidget from "./components/CartWidget";
 import DarkThemeSwitcher from "./components/DarkThemeSwithcer";
 import { Outlet } from "react-router-dom";
 import MainMenu from "./components/MainMenu";
+import CartProvider from "./components/providers/CartProvider";
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (item) => {
-    setCart([...cart, item]);
-  };
+  const [themeDark, setThemeDark] = useState(false);
 
   const setDarkTheme = (value) => {
     setThemeDark(value);
   };
-
-  const [themeDark, setThemeDark] = useState(false);
 
   return (
     <div
@@ -30,7 +25,9 @@ function App() {
       <div className="container mx-auto">
         <DarkThemeSwitcher darkTheme={themeDark} setDarkTheme={setDarkTheme} />
         <MainMenu />
-        <CartWidget cart={cart} />
+        <CartProvider>
+          <CartWidget />
+        </CartProvider>
         <Outlet></Outlet>
       </div>
     </div>
