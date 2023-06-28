@@ -4,6 +4,8 @@ import AboutPage from "../pages/AboutPage";
 import Menu from "../pages/MenuPage";
 import ContactsPage from "../pages/ContactsPage";
 import MenuItemPage from "../pages/MenuItemPage";
+import CartProvider from "../components/providers/CartProvider";
+import CartPage from "../pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: "/catalog/:id",
         element: <MenuItemPage />,
+      },
+      {
+        path: "/cart",
+        element: (
+          <CartProvider>
+            <CartPage />
+          </CartProvider>
+        ),
       },
       {
         path: "about",

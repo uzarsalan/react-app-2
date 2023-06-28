@@ -9,8 +9,8 @@ const CartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const sum = cart.reduce((sum, item) => {
-    sum += item.food.price * item.qty;
+  const sum = cart.items.reduce((sum, item) => {
+    sum += item.food.attributes.price * item.qty;
     return sum;
   }, 0);
 
